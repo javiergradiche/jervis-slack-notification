@@ -1,0 +1,14 @@
+#!groovy
+
+pipeline {
+    agent {
+        label 'stable && docker && linux && ansible'
+    }
+    stages {
+      stage('Send Notification') {
+        steps {
+            sh 'echo Send Notification'
+        }
+      }
+    }
+}

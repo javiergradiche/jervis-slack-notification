@@ -1,0 +1,33 @@
+#######################
+# Aurea Central Jervis
+#######################
+# User guide and documentation can be found at: https://github.com/trilogy-group/central-jervis
+# This project is based on https://github.com/samrocketman/jervis
+
+#language: angular4
+language: shell
+
+env:
+  - BUILD_ENV="dev"
+
+
+script:
+  - echo "build"
+
+after_success:
+  - echo "Yeay! It worked"
+
+after_failure:
+  - echo "Failed :("
+
+branches:
+  only:
+    - master
+
+jenkins:
+  platform: docker
+  os: ubuntu1604
+  stability: stable
+  sudo: sudo
+  pipeline_jenkinsfile: assets/JenkinsfileSlack
+      
